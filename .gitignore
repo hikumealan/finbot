@@ -205,6 +205,7 @@ __marimo__/
 
 # Frontend / Node.js
 node_modules/
+package-lock.json
 frontend/dist/
 frontend/build/
 frontend/.env
