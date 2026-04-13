@@ -1,0 +1,100 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-background: var(--bg);
+  --color-foreground: var(--fg);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-fg);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-fg);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-fg);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-fg);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-fg);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius: 0.5rem;
+}
+
+/* Light mode (default) */
+:root {
+  --bg: #ffffff;
+  --fg: #0a0a0a;
+  --card: #ffffff;
+  --card-fg: #0a0a0a;
+  --primary: #1a56db;
+  --primary-fg: #ffffff;
+  --secondary: #f3f4f6;
+  --secondary-fg: #1f2937;
+  --muted: #f9fafb;
+  --muted-fg: #6b7280;
+  --accent: #f3f4f6;
+  --accent-fg: #1f2937;
+  --destructive: #ef4444;
+  --border: #e5e7eb;
+  --input: #e5e7eb;
+  --ring: #1a56db;
+}
+
+/* Dark mode: .dark class on <html> */
+.dark {
+  --bg: #0a0a0a;
+  --fg: #fafafa;
+  --card: #111111;
+  --card-fg: #fafafa;
+  --primary: #3b82f6;
+  --primary-fg: #ffffff;
+  --secondary: #1f2937;
+  --secondary-fg: #f9fafb;
+  --muted: #1f2937;
+  --muted-fg: #9ca3af;
+  --accent: #1f2937;
+  --accent-fg: #f9fafb;
+  --destructive: #b91c1c;
+  --border: #374151;
+  --input: #374151;
+  --ring: #3b82f6;
+}
+
+/* System preference fallback (when no .dark or .light class) */
+@media (prefers-color-scheme: dark) {
+  :root:not(.light) {
+    --bg: #0a0a0a;
+    --fg: #fafafa;
+    --card: #111111;
+    --card-fg: #fafafa;
+    --primary: #3b82f6;
+    --primary-fg: #ffffff;
+    --secondary: #1f2937;
+    --secondary-fg: #f9fafb;
+    --muted: #1f2937;
+    --muted-fg: #9ca3af;
+    --accent: #1f2937;
+    --accent-fg: #f9fafb;
+    --destructive: #b91c1c;
+    --border: #374151;
+    --input: #374151;
+    --ring: #3b82f6;
+  }
+}
+
+/* Consistent select styling with proper arrow spacing */
+select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 0.5rem center;
+  background-size: 1rem;
+  padding-right: 2rem !important;
+}
+
+@keyframes slideIn {
+  from { transform: translateX(100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}

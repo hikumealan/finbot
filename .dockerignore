@@ -1,0 +1,45 @@
+# Sensitive data — never include in image layers
+data/
+.env
+.finbot/
+
+# Version control
+.git/
+.gitignore
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+
+# IDE / Editor
+.cursor/
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Mobile (separate build)
+mobile/ios/
+mobile/node_modules/
+
+# Tests & CI
+tests/
+.github/
+.pytest_cache/
+.ruff_cache/
+htmlcov/
+coverage.xml
+.coverage
+
+# Docker (prevent recursive context)
+docker-compose*.yml
+Dockerfile
+
+# Misc
+*.md
+LICENSE

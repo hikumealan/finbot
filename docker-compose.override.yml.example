@@ -1,0 +1,17 @@
+# macOS Hybrid Mode — use native Ollama (Metal GPU) with containerised FinBot.
+#
+# Copy this file to docker-compose.override.yml, then run:
+#   docker compose up -d
+#
+# Prerequisites:
+#   1. Ollama is installed natively (brew install ollama)
+#   2. Ollama is running (ollama serve)
+#   3. Model is pulled (ollama pull mistral:7b-instruct-v0.3-q4_K_M)
+
+services:
+  finbot-app:
+    environment:
+      - FINBOT_OLLAMA_HOST=http://host.docker.internal:11434
+    # Ensure host.docker.internal resolves on Linux too
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
