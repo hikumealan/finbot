@@ -20,7 +20,7 @@ dev: ## Start FastAPI + React dev server with auto-reload
 		sleep 2; \
 	fi
 	uv run finbot serve --reload &
-	cd frontend && npm run dev
+	cd frontend && npm start
 
 .PHONY: cli
 cli: ## Run a finbot CLI command (e.g., make cli CMD="expenses --month 2025-03")

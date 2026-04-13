@@ -3,6 +3,11 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "prestart": "if [ ! -f package-lock.json ]; then npm run setup; fi",
+    "start": " npm run dev",
+    "presetup": "npm run clean",
+    "setup": "npm i --legacy-peer-deps",
+    "clean": "npx -y rimraf node_modules package-lock.json",
     "dev": "vite dev",
     "build": "vite build",
     "preview": "vite preview"
